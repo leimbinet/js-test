@@ -1,0 +1,80 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Layout structure */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.top-header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.layout {
+    display: flex;
+    margin-top: 80px; /* Height of the header */
+}
+
+/* Left navigation styles */
+.left-nav {
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    height: 100vh; /* Full height */
+    position: fixed;
+    top: 80px;
+    left: 0;
+    overflow: auto;
+}
+
+.left-nav ul {
+    list-style-type: none;
+}
+
+.left-nav ul li {
+    margin-bottom: 10px;
+}
+
+.left-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    display: block;
+    border-radius: 4px;
+}
+
+.left-nav ul li a:hover {
+    background-color: #ddd;
+}
+
+/* Content area styles */
+.content {
+    margin-left: 220px;
+    padding: 20px;
+    flex: 1;
+}
+
+#partialViewContainer {
+    background-color: #fafafa;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+/* Highlight active menu item */
+.left-nav ul li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
