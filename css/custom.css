@@ -1,0 +1,66 @@
+/* Warm Colors for the Layout */
+
+/* Top navigation (Warm orange background, white text) */
+.navbar {
+    background-color: #E67E22; /* Warm orange */
+    color: white;
+}
+
+.navbar a.navbar-brand {
+    color: white !important; /* Ensure text is white */
+}
+
+/* Sidebar with a warm beige background */
+.sidebar {
+    background-color: #F3C794; /* Light beige */
+    color: #5D4037; /* Warm brown for text */
+}
+
+/* Sidebar navigation active links (Orange with white text) */
+.sidebar .nav-link.active {
+    background-color: #E67E22; /* Warm orange */
+    color: white !important;   /* White text */
+}
+
+/* Sidebar links default state (hover effects for color) */
+.sidebar .nav-link {
+    color: #5D4037; /* Warm brown */
+    font-weight: bold;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #F9E0D2; /* Light orange on hover */
+    color: #E67E22 !important; /* Orange text on hover */
+}
+
+/* Collapsible sub-menu active link */
+.sidebar .collapse.show .nav-link {
+    color: #E67E22; /* Warm orange text for expanded sub-menu links */
+}
+
+/* Content Area */
+h1 {
+    color: #D35400; /* Warm reddish-orange */
+}
+
+#partialViewContainer {
+    background-color: #FBE9E7; /* Light peach background for content area */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Buttons */
+button {
+    background-color: #E67E22; /* Warm orange button background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #D35400; /* Darker orange on hover */
+    color: white;
+    cursor: pointer;
+}
