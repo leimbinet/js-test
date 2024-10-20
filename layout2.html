@@ -3,34 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warm-Themed Website with Dynamic Controller, View, and Modal</title>
+    <title>Modular MVC with Dropzone and DataTables</title>
     <!-- Bootstrap 5.3.2 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- DataTables CSS -->
     <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
     <!-- Dropzone CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.css" rel="stylesheet">
-    <!-- Custom CSS for Warm Colors -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
 
-    <!-- Top Header with Warm Colors -->
+    <!-- Top Header -->
     <nav class="navbar navbar-expand-lg" style="background-color: #E67E22; color: white;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" style="color: white;">Warm Themed Website</a>
+            <a class="navbar-brand" href="#" style="color: white;">Modular MVC Application</a>
         </div>
     </nav>
 
     <!-- Main Container -->
     <div class="container-fluid">
         <div class="row">
-            <!-- Left Navigation with Collapsible Sub-Menus -->
-            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar" style="background-color: #F3C794;">
+            <!-- Sidebar Navigation (fixed to the left) -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
                 <div class="position-sticky pt-3">
-                    <!-- <ul class="nav flex-column">
+                    <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" href="#" data-controller="Home" data-view="Home">Home</a>
+                            <a class="nav-link active" href="#" data-controller="Home" data-view="Home">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#" data-controller="Home" data-view="About">About Us</a>
@@ -41,53 +41,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#" data-controller="Home" data-view="Contact">Contact</a>
                         </li>
-                    </ul> -->
-
-
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#" data-controller="Home" data-view="Home">Home</a>
-                        </li>
-
-                        <!-- About Section with Collapsible Sub-Menu -->
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="collapse" href="#aboutSubMenu" role="button" aria-expanded="false" aria-controls="aboutSubMenu">
-                                About <span class="caret"></span>
-                            </a>
-                            <div class="collapse" id="aboutSubMenu">
-                                <ul class="nav flex-column ms-3">
-                                    <li class="nav-item"><a class="nav-link" href="#" data-controller="Home" data-view="About">About Us</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#" data-controller="Home" data-view="Team">Our Team</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#" data-controller="Home" data-view="History">Our History</a></li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <!-- Services Section with Collapsible Sub-Menu -->
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="collapse" href="#servicesSubMenu" role="button" aria-expanded="false" aria-controls="servicesSubMenu">
-                                Services <span class="caret"></span>
-                            </a>
-                            <div class="collapse" id="servicesSubMenu">
-                                <ul class="nav flex-column ms-3">
-                                    <li class="nav-item"><a class="nav-link" href="#" data-controller="Home" data-view="Services">Our Services</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#" data-controller="Home" data-view="Pricing">Pricing</a></li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" data-controller="Home" data-view="Contact">Contact</a>
-                        </li>
                     </ul>
                 </div>
             </nav>
 
             <!-- Content Area -->
-            <main class="flex-grow-1 overflow-auto" style="max-height: calc(100vh - 50px);">
-                <h1 class="text-center mt-4">Welcome to Our Warm-Themed Site</h1>
+            <main id="content" class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div id="partialViewContainer" class="mt-4">
-                    <!-- Partial content will be loaded here -->
+                    <!-- Partial content will be dynamically loaded here -->
                 </div>
             </main>
         </div>
@@ -99,8 +60,9 @@
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.js"></script>
-    <!-- Custom JavaScript -->
-    <script type="module" src="js/main-mvc.js"></script>
+    
+    <!-- Main JS file -->
+    <script type="module" src="js/main.js"></script>
 
 </body>
 </html>
