@@ -1,9 +1,9 @@
-import { cleanupActiveDropzones } from './dropzoneManager.js';
+import { initializeDropzone, cleanupActiveDropzones } from './dropzoneManager.js';
 
-// Function to load modal dynamically from a separate HTML file
+// Load modal dynamically from a separate HTML file
 function loadModal() {
     $.ajax({
-        url: '/modals/modal.html',
+        url: '/path/to/modal.html',
         type: 'GET',
         success: function (result) {
             if ($('#editModal').length === 0) {
@@ -12,7 +12,7 @@ function loadModal() {
 
                 // Clean up Dropzone when modal is closed
                 $('#editModal').on('hidden.bs.modal', function () {
-                    cleanupActiveDropzones();  // Clean up Dropzone when modal closes
+                    cleanupActiveDropzones();  // Clean up Dropzone on modal close
                 });
             }
         },
@@ -22,11 +22,11 @@ function loadModal() {
     });
 }
 
-// Function to initialize Dropzone in the modal after loading
+// Initialize Dropzone inside the modal after loading
 function initializeDropzoneForModal() {
     let dropzoneElement = $('#myDropzone')[0];
     if (dropzoneElement && !Dropzone.instances.length) {
-        initializeDropzone(dropzoneElement);  // Reuse base config for modal Dropzone
+        initializeDropzone(dropzoneElement);  // Initialize Dropzone in the modal
     }
 }
 

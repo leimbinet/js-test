@@ -1,4 +1,4 @@
-// General Dropzone configuration function
+// Initialize Dropzone with optional custom configurations
 function initializeDropzone(element, options = {}) {
     let defaultOptions = {
         url: $(element).attr("action"),
@@ -11,44 +11,44 @@ function initializeDropzone(element, options = {}) {
         }
     };
 
-    // Merge default options with specific overrides
+    // Merge default options with custom options
     let dropzoneConfig = $.extend({}, defaultOptions, options);
 
-    // Initialize the Dropzone
+    // Initialize Dropzone instance
     return new Dropzone(element, dropzoneConfig);
 }
 
-// Function to clean up all active Dropzones
+// Clean up all active Dropzone instances
 function cleanupActiveDropzones() {
     Dropzone.instances.forEach(function (dz) {
         dz.destroy();  // Destroy each Dropzone instance
     });
-    Dropzone.instances = [];  // Clear the active Dropzones array
+    Dropzone.instances = [];  // Clear the Dropzone instances array
 }
 
-// Function to initialize Dropzones in the current view
+// Initialize Dropzones in the current view
 function initializeDropzonesInCurrentView() {
-    // Deallocate previous Dropzone instances (if necessary)
+    // Clean up previous Dropzone instances
     cleanupActiveDropzones();
 
-    // Find Dropzone forms by class and initialize
+    // Find Dropzone forms and initialize
     $(".dropzone").each(function () {
         let dropzoneElement = $(this)[0];
         let id = $(this).attr("id");
 
-        // Example of custom behavior per ID
         if (id === "myDropzoneSpecial") {
+            // Custom configuration for specific Dropzone
             initializeDropzone(dropzoneElement, {
-                maxFiles: 5,  // Custom config for this view
+                maxFiles: 5,
                 dictDefaultMessage: "Drop multiple files here or click to upload",
                 acceptedFiles: ".jpg,.png,.gif"
             });
         } else {
-            // Use default Dropzone config for other views
+            // Default Dropzone configuration
             initializeDropzone(dropzoneElement);
         }
     });
 }
 
-// Export functions (if using ES6 modules)
+// Export functions to be used in other modules
 export { initializeDropzone, cleanupActiveDropzones, initializeDropzonesInCurrentView };

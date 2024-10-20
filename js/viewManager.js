@@ -1,18 +1,18 @@
-import { initializeDropzonesInCurrentView, cleanupActiveDropzones } from './dropzoneManager.js';
+import { initializeDropzonesInCurrentView } from './dropzoneManager.js';
 import { loadModal } from './modalManager.js';
 
 // Function to load partial view from MVC controller
 function loadPartialView(controller, view) {
     $.ajax({
-        url: `views/${controller}/${view}`,  // Dynamic URL
+        url: `/${controller}/${view}`,  // Dynamic URL
         type: 'GET',
         success: function (result) {
-            $('#partialViewContainer').html(result);  // Load new view
+            $('#partialViewContainer').html(result);  // Inject the loaded view
 
-            // After the new partial is loaded, initialize Dropzones in the view
+            // Initialize Dropzones after loading the partial view
             initializeDropzonesInCurrentView();
 
-            // Load the modal from the separate HTML file
+            // Load the modal for editing files
             loadModal();
         },
         error: function (xhr, status, error) {
@@ -21,10 +21,10 @@ function loadPartialView(controller, view) {
     });
 }
 
-// Function to handle active menu highlighting
+// Function to highlight the active menu link
 function setActiveMenu(element) {
-    $('.nav-link').removeClass('active');
-    element.addClass('active');
+    $('.nav-link').removeClass('active');  // Remove active class from all links
+    element.addClass('active');  // Add active class to the clicked link
 }
 
 // Export functions
