@@ -64,3 +64,12 @@ button:hover {
     color: white;
     cursor: pointer;
 }
+
+.nav-item .caret {
+    float: right;
+    transition: transform 0.3s;
+}
+
+.nav-item .collapsed .caret {
+    transform: rotate(-90deg);
+}
