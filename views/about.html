@@ -30,7 +30,21 @@
 <script>
     $(document).ready(function () {
         // Initialize DataTable for the 'About Us' table
-        $('#recordsTable').DataTable();
+        $('#recordsTable').DataTable({
+        "pageLength": 10,  // Number of rows per page
+        "drawCallback": function(settings) {
+            var api = this.api();
+            var rows = api.rows({ page: 'current' }).data().length;
+            var totalRows = api.rows().data().length;
+            
+            // If total rows are less than or equal to the page length, hide pagination
+            if (totalRows <= 10) {
+                $('.dataTables_paginate').hide();
+            } else {
+                $('.dataTables_paginate').show();
+            }
+       }});
+
 
         // Initialize Dropzone if needed (optional)
         initializeDropzone("#myDropzoneAbout");

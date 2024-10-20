@@ -73,3 +73,7 @@ button:hover {
 .nav-item .collapsed .caret {
     transform: rotate(-90deg);
 }
+
+main {
+    overflow-y: auto;
+}
